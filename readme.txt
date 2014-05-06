@@ -2,7 +2,7 @@ Looking for some help to get this running. The lcd im using is the 7" Capacitive
 
 http://www.buydisplay.com/default/7-inch-lcd-module-capacitive-touch-screen-panel-i2c-spi-serial
 
-Datasheet on there site
+Datasheet on their site
 
 The schematic (simple test pcb) is in the sch folder.
 
