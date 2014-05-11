@@ -167,6 +167,7 @@ char waitPoll(uchar regname, uchar waitflag);
 void fillRect(void);
 void drawRect(uint x, uint y, uint w, uint h, uint color, char filled);
 void drawLine(uint x0, uint x1, uint y0, uint y1, uint color);
+void LCD_Reset(void);
 
 #define FILL 1
 #define NOFILL 0
@@ -194,4 +195,6 @@ void WriteCommandW(uchar command, uint data);
 void WriteCommand(unsigned char command, unsigned int data);
 void putPixelStream(uchar * p, uint count, uint x, uint y);
 
+
+void LCD_WriteRegister(unsigned char cmd, unsigned char data);
 #endif

@@ -52,14 +52,21 @@ uint bColor = color_blue;
 
 void main ()
 {
+#ifdef DEBUG_ON
+    DBINIT();
+#endif
+
     init();
     configIO();
+    C86_LOW();
 
     LCD_Initial();
-    Backlight(RA8875_PWM_CLK_DIV8,80);
+    //Backlight(RA8875_PWM_CLK_DIV8,80);
 
-    Write_Dir(0X01,0X80);//display on
-
+    LCD_CmdWrite(0X01);//display on
+    LCD_DataWrite(0X80);
+    //LCD_WriteRegister(0x01,0x80);
+    
     Active_Window(0,799,0,479);//Set the working window size
     SetColors(fColor,bColor);
     ClearScreen(0);
@@ -106,7 +113,6 @@ void configIO()
     PORTSetPinsDigitalOut(IOPORT_A, ALL_BITS);
     PORTSetPinsDigitalOut(IOPORT_B, ALL_BITS);
     PORTSetPinsDigitalOut(IOPORT_C, ALL_BITS);
-
 }
 
 void init()
